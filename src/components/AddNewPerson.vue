@@ -21,9 +21,9 @@
         props: {
             informations: {
                 type: Array,
-            },
+            }
         },
-        emits: ['close', 'addNew'], // here we call "addNew" emit for avoid warning and this emit comes from 'method' in this component. that is bellow in the script. 
+        emits: ['close', 'addNew', 'updatePeopleInfo'], // here we call "addNew" emit for avoid warning and this emit comes from 'method' in this component. that is bellow in the script. 
         components: {
         },
         data() {

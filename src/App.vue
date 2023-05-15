@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="">
-      <Header name="Practice Pops and Emits" />
+      <!-- <Header name="Practice Pops and Emits" /> -->
       <Information />
     </div>
     <!-- <RouterView /> -->

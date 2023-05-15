@@ -39,27 +39,18 @@ import AddNewPerson from './AddNewPerson.vue';
         //         type: Array,
         //     },
         // },
+        emits: ['info'],
         components: {
             AddNewPerson,
         },
         data() {
             return {
                 isModalVisible: false,
-                informations: [
-                    {
-                        name: 'Gabbar Singh',
-                        mobile: 92547896
-                    },
-                    {
-                        name: 'Amitabh Reza',
-                        mobile: 81445678
-                    },
-                    {
-                        name: 'Humaun Ahmed',
-                        mobile: 2547865486
-                    }
-                ]
+                informations: [],
             }
+        },
+        mounted () {
+            this.informations = JSON.parse(localStorage.getItem('informations')) ? JSON.parse(localStorage.getItem('informations')) : []
         },
         methods: {
             showModal() {
@@ -72,10 +63,24 @@ import AddNewPerson from './AddNewPerson.vue';
                 this.informations.splice(index, 1)
             },
             getData(value){
+                console.log(value)
                 this.informations.push(value);
+                localStorage.setItem('informations', JSON.stringify(this.informations))
                 // console.log(value);
-            }
-
+            },
+            // storeInfo(){
+            //     if(this.info.length){
+            //         // push the new takeInformation to list
+            //         this.informations.push(this.info)
+            //         // store the data in localStorage
+            //         localStorage.setItem("informations", JSON.stringify(this.informations));
+            //         console.log(localStorage)
+            //     }
+            // },
+            // getInfo(){
+            //     this.informations = JSON.parse(localStorage.getItem("informations"));
+            //     console.log(this.informations``)
+            // },
         },
     }
 </script>
